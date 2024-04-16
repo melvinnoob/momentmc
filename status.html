@@ -3,50 +3,62 @@
 <head>
     <title>Minecraft Server Status</title>
     <style>
-          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-            body {
-              background-image:url('a4858ae959042dcbe3100264241a0c6c.jpg');
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-              background-size: cover;
-              color: #FFFFFF;
-              font-family: 'Press Start 2P', cursive;
-          }
+        body {
+            background-image: url('a4858ae959042dcbe3100264241a0c6c.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+        }
         .container {
-              width: 80%;
-              margin: auto;
-              text-align: center;
-              animation: fadeIn 2s;
-          }
-          .button {
-              background-color: #4CAF50;
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-              transition: background-color 0.3s ease;
-          }
-          .button:hover {
-          background-color: #45a049;
-          }
-          .online {
-              color: green;
-          }
-          .offline {
-              color: red;
-          }
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+        .button {
+            background-color: #FFD700; /* Update button background color to gold */
+            border: none;
+            color: #000000; /* Change text color to black */
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px auto; /* Center the button horizontally */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* Add some extra styling */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+            text-transform: uppercase; /* Uppercase text */
+        }
+        .button:hover {
+            background-color: #FFA500; /* Change button color on hover to orange */
+        }
+        .online {
+            color: green;
+        }
+        .offline {
+            color: red;
+        }
     </style>
 </head>
 <body>
-    <h1>MomentMC Network Status</h1>
-    <p>Server IP: <span id="MomentMC.com">MomentMC.com</span></p>
-    <p>Status: <span id="server-status" class="offline">Loading...</span></p>
+    <div class="container">
+        <h1>MomentMC Network Status</h1>
+        <p>Server IP: <span id="MomentMC.com">MomentMC.com</span></p>
+        <p>Status: <span id="server-status" class="offline">Loading...</span></p>
+    </div>
+
+    <div style="text-align: center;"> <!-- Center align the button -->
+        <a href="index.html" class="button">Go Back to Main Page</a>
+    </div>
 
     <script>
         // Replace "your-minecraft-server-ip" with your actual Minecraft server IP
@@ -74,5 +86,4 @@
         checkServerStatus();
     </script>
 </body>
-  <a href="index.html" class="button">Go Back to Main Page</a>
 </html>
