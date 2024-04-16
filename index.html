@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MomentMC Network</title>
+    <!-- Add the following link tag to include an image in the tab -->
+    <link rel="icon" type="image/png" href="momentmc.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            background-image: url('a4858ae959042dcbe3100264241a0c6c.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #FFFFFF;
+            font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            animation: fadeIn 2s;
+            padding-top: 50px;
+            position: relative;
+        }
+        .button {
+            background-color: #ADD8E6;
+            border: none;
+            color: #000000;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+        }
+        .button:hover {
+            background-color: #87CEEB;
+        }
+        .momentmc {
+            color: #FFD700;
+        }
+        .ip-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .ip-container input[type="text"] {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #FFD700;
+            color: #FFD700;
+            font-size: 16px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .ip-container button {
+            background-color: #ADD8E6;
+            border: none;
+            color: #000000;
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .ip-container button:hover {
+            background-color: #87CEEB;
+        }
+        /* Add CSS to make the image smaller */
+        .small-image {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin: 20px auto; /* Center the image and add some margin */
+            display: block; /* Ensure it's displayed as a block element */
+        }
+        @keyframes fadeIn {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Welcome to <span class="momentmc">MomentMC Network</span>! 🌟</h1>
+        <h2>🔥 Join Our Minecraft Server 🔥</h2>
+        <p>🚀 Joining MomentMC is as easy as crafting a diamond sword! Just type in the IP: <span class="momentmc">MomentMC.com</span> and embark on your epic adventure!</p>
+        <a href="https://discord.gg/jK3egpAGbP" class="button">🎇Join Our Discord Server🎇</a>
+        <a href="https://form.jotform.com/240817413223448" class="button">🌟staff application🌟</a>
+        <a href="rules.html" class="button">📜Rules📜</a>
+        <a href="page2.html" class="button">Explore Page 2</a>
+        <a href="http://store.momentmc.com/" class="button">🧺Store🧺</a>
+
+        <div class="ip-container">
+            <input type="text" id="HTML" value="https://momentmc.com" readonly>
+            <button id="HTMLButton" onclick="copyToClipboard()">Copy IP</button>
+        </div>
+
+        <a href="status.html" class="button">Status</a>
+
+        <!-- Add image below the buttons -->
+        <img src="momentmc.png" alt="Image description" class="small-image">
+        
+        <script>
+            function copyToClipboard() {
+                const HTML = document.getElementById("HTML");
+                HTML.select();
+                document.execCommand("copy");
+                const HTMLButton = document.getElementById("HTMLButton");
+                HTMLButton.innerText = "Copied!";
+            }
+        </script>
+    </div>
+</body>
+</html>
