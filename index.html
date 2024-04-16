@@ -6,40 +6,73 @@
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
-            background-image: url('a4858ae959042dcbe3100264241a0c6c.jpg');
+            background-image: url('a4858ae959042dcbe3100264241a0c6c.jpg'); /* Update the URL with your background image */
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             color: #FFFFFF;
             font-family: 'Press Start 2P', cursive;
+            margin: 0;
+            padding: 0;
         }
         .container {
             width: 80%;
             margin: auto;
             text-align: center;
             animation: fadeIn 2s;
+            padding-top: 50px; /* Add some space from the top */
+            position: relative; /* Add relative positioning */
         }
         .button {
-            background-color: #4CAF50;
+            background-color: #ADD8E6; /* Update button background color to light blue */
             border: none;
-            color: white;
+            color: #000000; /* Change text color to black */
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
-            margin: 4px 2px;
+            margin: 10px; /* Add some space around the buttons */
             cursor: pointer;
             transition: background-color 0.3s ease;
             /* Add some extra styling */
             border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+            text-transform: uppercase; /* Uppercase text */
         }
         .button:hover {
-            background-color: #45a049;
+            background-color: #87CEEB; /* Change button color on hover to a slightly darker shade of blue */
         }
         .momentmc {
             color: #FFD700; /* Change the color of 'MomentMC' to gold */
+        }
+        .ip-container {
+            position: absolute; /* Add absolute positioning */
+            top: 10px; /* Position from the top */
+            left: 10px; /* Position from the left */
+        }
+        .ip-container input[type="text"] {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid #FFD700; /* Add an underline effect */
+            color: #FFD700; /* Change text color to gold */
+            font-size: 16px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            margin-right: 10px; /* Add space between the input field and the button */
+        }
+        .ip-container button {
+            background-color: #ADD8E6; /* Update button color to light blue */
+            border: none;
+            color: #000000; /* Change text color to black */
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 10px; /* Rounded corners */
+            transition: background-color 0.3s ease;
+        }
+        .ip-container button:hover {
+            background-color: #87CEEB; /* Change button color on hover to a slightly darker shade of blue */
         }
         @keyframes fadeIn {
             0% {opacity: 0;}
@@ -58,9 +91,12 @@
         <a href="page2.html" class="button">Explore Page 2</a>
         <a href="http://store.momentmc.com/" class="button">🧺Store🧺</a>
 
-        <!-- The text field -->
-        <input type="text" id="HTML" value="https://momentmc.com" readonly>
-        <button id="HTMLButton" onclick="copyToClipboard()">Copy IP</button>
+        <!-- IP field and copy button -->
+        <div class="ip-container">
+            <input type="text" id="HTML" value="https://momentmc.com" readonly>
+            <button id="HTMLButton" onclick="copyToClipboard()">Copy IP</button>
+        </div>
+
         <a href="status.html" class="button">Status</a>
 
         <script>
