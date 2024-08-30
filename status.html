@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Ping - MomentMC Company</title>
+    <meta name="description" content="Monitor the ping response time of MomentMC Company servers.">
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Import Chart.js library -->
+    <style>
+        /* Reset & General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            padding-top: 80px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(90deg, #1e1e1e 0%, #333 100%);
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        .logo h1:hover {
+            color: #e67e22;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        header nav ul li a {
+            color: #f4f4f4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #e67e22;
+        }
+
+        header nav ul li a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #e67e22;
+            transition: width 0.3s;
+        }
+
+        header nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            padding: 10px 0;
+            min-width: 150px;
+            z-index: 1000;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu li a {
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #444;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer ul li a:hover {
+            color: #e67e22;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            background: #000;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/image/logo.png" alt="MomentMC Logo">
+                <h1>MomentMC Company</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#customer-area" class="dropdown-toggle">Customer Area</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://bill.momentmc.com">Billing Panel</a></li>
+                            <li><a href="https://panel.momentmc.com">Server Panel</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="content">
+            <h2>Server Ping Monitoring</h2>
+
+            <!-- Chart 1: MomentMC.com -->
+            <canvas id="pingChart1" width="400" height="200"></canvas>
+
+            <!-- Chart 2: Bill.momentmc.com -->
+            <canvas id="pingChart2" width="400" height="200"></canvas>
+
+            <!-- Chart 3: Panel.momentmc.com -->
+            <canvas id="pingChart3" width="400" height="200"></canvas>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Company Section -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="https://bill.momentmc.com/tos">Terms & Conditions</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="https://bill.momentmc.com/#intro-section">Service</a></li>
+                    <li><a href="status.html">Status</a></li>
+                </ul>
+            </div>
+
+            <!-- Hosting Section -->
+            <div class="footer-column">
+                <h3>Hosting</h3>
+                <ul>
+                    <li><a href="https://bill.momentmc.com/#intro-section">Minecraft Servers</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Section -->
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="https://bill.momentmc.com/tickets">Ticket</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <img src="image/paypal-logo.png" alt="PayPal" class="payment-icon">
+                    <img src="image/stripe-logo.png" alt="Stripe" class="payment-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 MomentMC - All Rights Reserved</p>
+        </div>
+
+        <!-- Footer Styles -->
+        <style>
+            footer {
+                background-color: #222;
+                color: #fff;
+                padding: 40px 20px;
+                text-align: center;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-bottom: 20px;
+            }
+
+            .footer-column {
+                flex: 1;
+                min-width: 220px; /* Minimum width for each column */
+                margin: 20px;
+            }
+
+            .footer-column h3 {
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .footer-column ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-column ul li {
+                margin-bottom: 8px;
+            }
+
+            .footer-column ul li a {
+                color: #ddd;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s ease;
+            }
+
+            .footer-column ul li a:hover {
+                color: #e67e22;
+            }
+
+            .payment-methods {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .payment-icon {
+                width: 40px;
+                height: auto;
+            }
+
+            .footer-bottom {
+                border-top: 1px solid #444;
+                padding-top: 15px;
+                font-size: 14px;
+                color: #999;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .footer-container {
+                    flex-direction: column; /* Stacks columns vertically on smaller screens */
+                    align-items: center; /* Centers the content on smaller screens */
+                }
+
+                .footer-column {
+                    margin: 15px 0;
+                }
+            }
+        </style>
+    </footer>
+
+    <script>
+        // URLs of the servers to ping
+        const urls = [
+            'https://momentmc.com',
+            'https://bill.momentmc.com',
+            'https://panel.momentmc.com'
+        ];
+
+        // Setup charts
+        const ctx1 = document.getElementById('pingChart1').getContext('2d');
+        const ctx2 = document.getElementById('pingChart2').getContext('2d');
+        const ctx3 = document.getElementById('pingChart3').getContext('2d');
+
+        const charts = [
+            new Chart(ctx1, createChartConfig('MomentMC.com')),
+            new Chart(ctx2, createChartConfig('Bill.MomentMC.com')),
+            new Chart(ctx3, createChartConfig('Panel.MomentMC.com'))
+        ];
+
+        // Function to create chart configuration (same as previous)
+        function createChartConfig(label) {
+            return {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: `Ping to ${label}`,
+                        data: [],
+                        borderColor: '#f4f4f4',
+                        backgroundColor: 'rgba(230, 126, 34, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Ping (ms)',
+                                color: '#f4f4f4'
+                            },
+                            ticks: {
+                                color: '#f4f4f4'
+                            },
+                            grid: {
+                                color: '#333'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time',
+                                color: '#f4f4f4'
+                            },
+                            ticks: {
+                                color: '#f4f4f4'
+                            },
+                            grid: {
+                                color: '#333'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f4f4f4'
+                            }
+                        }
+                    }
+                }
+            };
+        }
+
+        // Function to update chart with new ping data
+        function updateChart(chart, label, ping) {
+            const labels = chart.data.labels;
+            const data = chart.data.datasets[0].data;
+
+            // Limit the data to the last 10 points
+            if (labels.length >= 10) {
+                labels.shift();
+                data.shift();
+            }
+
+            labels.push(label);
+            data.push(ping);
+
+            chart.update();
+        }
+
+        // Function to ping a server and update the corresponding chart
+        function pingServer(url, chart) {
+            const startTime = performance.now();
+
+            fetch(url, { method: 'HEAD', mode: 'no-cors' })
+                .then(() => {
+                    const ping = Math.round(performance.now() - startTime);
+                    updateChart(chart, new Date().toLocaleTimeString(), ping);
+                })
+                .catch(() => {
+                    updateChart(chart, new Date().toLocaleTimeString(), 0);
+                });
+        }
+
+        // Set up interval to ping servers every minute
+        setInterval(() => {
+            urls.forEach((url, index) => pingServer(url, charts[index]));
+        }, 3000);
+
+        // Initial ping to populate charts
+        urls.forEach((url, index) => pingServer(url, charts[index]));
+    </script>
+</body>
+</html>
