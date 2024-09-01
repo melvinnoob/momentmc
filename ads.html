@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MomentMC - Ads Section</title>
+    <meta name="description" content="Redirecting to MomentMC billing panel.">
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .ad-section {
+            margin: 20px auto;
+            max-width: 468px;
+        }
+
+        .ad-container {
+            margin-bottom: 20px;
+        }
+
+        .redirect-message {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Redirect Message -->
+    <div class="redirect-message">
+        You will be redirected in <span id="countdown">5</span> seconds...
+    </div>
+
+    <!-- Ad Section -->
+    <div class="ad-section">
+        <div class="ad-container">
+            <!-- First Ad -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '3841f0a85fd14d0bb9faa7423259129e',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/3841f0a85fd14d0bb9faa7423259129e/invoke.js"></script>
+        </div>
+
+        <div class="ad-container">
+            <!-- Second Ad -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '1b5e4484de902f28349a977e58b376d0',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/1b5e4484de902f28349a977e58b376d0/invoke.js"></script>
+        </div>
+
+        <div class="ad-container">
+            <!-- Third Ad (Updated) -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '47525c3b5403fb6bf0a036cf34b848bf',
+                    'format' : 'iframe',
+                    'height' : 300,
+                    'width' : 160,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.topcreativeformat.com/47525c3b5403fb6bf0a036cf34b848bf/invoke.js"></script>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle countdown and redirect -->
+    <script>
+        let countdown = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        const interval = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://bill.momentmc.com/Free%20Tier%20Minecraft%20server";
+            }
+        }, 1000); // Update countdown every second
+    </script>
+</body>
+</html>
