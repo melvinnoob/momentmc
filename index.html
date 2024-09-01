@@ -1,0 +1,541 @@
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>MomentMC - Premium Minecraft Server Hosting</title>
+                        <meta name="description" content="Experience premium Minecraft server hosting with MomentMC. High-performance, affordable plans with 24/7 support. Start your Minecraft adventure today.">
+                        <meta property="og:title" content="MomentMC - Premium Minecraft Server Hosting">
+                        <meta property="og:description" content="Join the ultimate gaming experience with our high-performance Minecraft servers.">
+                        <meta property="og:image" content="/image/logo.png">
+                        <meta property="og:url" content="https://momentmc.com">
+                        <meta name="twitter:card" content="summary_large_image">
+                        <link rel="icon" href="/image/logo.png" type="image/png">
+                        <link rel="stylesheet" href="styles.css"> <!-- Assuming your CSS is in a separate file named styles.css -->
+
+                        <!-- Structured Data for SEO -->
+                            <script type="application/ld+json">
+                            {
+                              "@context": "https://schema.org",
+                              "@type": "Organization",
+                              "name": "MomentMC",
+                              "url": "https://yourwebsite.com",
+                              "logo": "/image/logo.png",
+                              "sameAs": [
+                                "https://twitter.com/yourtwitterhandle",
+                                "https://facebook.com/yourfacebookpage",
+                                "https://instagram.com/yourinstagramhandle"
+                              ]
+                            }
+                            </script> <!-- Properly closed script tag -->
+
+                <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const dropdown = document.querySelector('.dropdown');
+                            const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+                            dropdownToggle.addEventListener('click', function(event) {
+                                event.preventDefault(); // Prevent the default link behavior
+                                dropdown.classList.toggle('open');
+                            });
+
+                            // Close the dropdown if clicked outside
+                            document.addEventListener('click', function(event) {
+                                if (!dropdown.contains(event.target)) {
+                                    dropdown.classList.remove('open');
+                                }
+                            });
+                        });
+                    </script>
+                        
+    
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // Smooth scrolling
+                                const links = document.querySelectorAll('a[href^="#"]');
+                                links.forEach(link => {
+                                    link.addEventListener('click', function (event) {
+                                        event.preventDefault();
+                                        const targetId = this.getAttribute('href').substring(1);
+                                        const targetElement = document.getElementById(targetId);
+
+                                        if (targetElement) {
+                                            window.scrollTo({
+                                                top: targetElement.offsetTop,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                    });
+                                });
+
+                                // Dropdown functionality
+                                const dropdown = document.querySelector('.dropdown');
+                                const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+                                dropdownToggle.addEventListener('click', function (event) {
+                                    event.preventDefault();
+                                    dropdown.classList.toggle('open');
+                                });
+
+                                document.addEventListener('click', function (event) {
+                                    if (!dropdown.contains(event.target)) {
+                                        dropdown.classList.remove('open');
+                                    }
+                                });
+                            });
+                        </script>
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const hamburger = document.querySelector('.hamburger-menu');
+                                const navMenu = document.querySelector('.nav-menu');
+
+                                hamburger.addEventListener('click', function () {
+                                    navMenu.classList.toggle('open');
+                                });
+
+                                // Close the dropdown if clicked outside
+                                document.addEventListener('click', function (event) {
+                                    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                                        navMenu.classList.remove('open');
+                                    }
+                                });
+                            });
+                        </script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/image/logo.png" alt="MomentMC Logo">
+                <h1>MomentMC Company</h1>
+            </div>
+            <nav>
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#customer-area" class="dropdown-toggle">Customer Area</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://bill.momentmc.com">Billing Panel</a></li>
+                                <li><a href="https://panel.momentmc.com">Server Panel</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-content">
+            <h2>Your Ultimate Minecraft Hosting Solution</h2>
+            <p>Experience the most reliable and high-performance servers, designed specifically for Minecraft enthusiasts.</p>
+            <a href="https://bill.momentmc.com" class="cta-button">Start Your Journey</a>
+            <a href="#pricing" class="cta-button-outline">Try for Free</a> <!-- New button -->
+        </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Why Choose MomentMC?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>High Performance</h3>
+                    <p>Our servers are optimized for peak Minecraft performance, ensuring smooth gameplay even with the most demanding mods.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock to assist you with any issues or questions you may have.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Instant Setup</h3>
+                    <p>Your server is ready within minutes, allowing you to jump straight into your Minecraft world without delay.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Affordable Pricing</h3>
+                    <p>We offer flexible plans that cater to every budget, ensuring you get the best value for your money.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2>Our Hosting Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <h3>Basic</h3>
+                    <p>Free Forever</p>
+                    <ul>
+                        <li>1 GB RAM</li>
+                        <li>24/7 Uptime</li>
+                        <li>1-10 Players</li>
+                        <li>Standard Support</li>
+                    </ul>
+                    <a href="ads1.html" class="cta-button">Select Plan</a>
+                </div>
+                <div class="pricing-item">
+                    <h3>Iron</h3>
+                    <p>$2.49/month</p>
+                    <ul>
+                        <li>3 GB RAM</li>
+                        <li>24/7 Uptime</li>
+                        <li>10-50 Players</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="https://bill.momentmc.com/checkout/config/3" class="cta-button">Select Plan</a>
+                </div>
+                <div class="pricing-item">
+                    <h3>Diamond</h3>
+                    <p>$12/month</p>
+                    <ul>
+                        <li>6 GB RAM</li>
+                        <li>24/7 Uptime</li>
+                        <li>50-100 Players</li>
+                        <li>Dedicated Support</li>
+                    </ul>
+                    <a href="https://bill.momentmc.com/checkout/config/6" class="cta-button">Select Plan</a>
+                </div>
+                <div class="pricing-item">
+                    <h3>Totem</h3>
+                    <p>$26/month</p>
+                    <ul>
+                        <li>10 GB RAM</li>
+                        <li>24/7 Uptime</li>
+                        <li>100+ Players</li>
+                        <li>Premium Support</li>
+                    </ul>
+                    <a href="https://bill.momentmc.com/checkout/config/9" class="cta-button">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="price-comparison-graph">
+        <style>
+            #price-comparison-graph {
+                background-color: #2c2c2c; /* Darker background color from the image */
+                color: #f4f4f4; /* Light text color for contrast */
+                font-family: Arial, sans-serif;
+                padding: 20px; /* Add padding to avoid content sticking to the edges */
+                border-radius: 10px; /* Add a border-radius to make it look cleaner */
+            }
+
+            #price-comparison-graph canvas {
+                background-color: #000000; /* Black background for the canvas */
+                border-radius: 10px;
+                padding: 20px;
+                display: block; /* Ensures canvas takes full width */
+                margin: 0 auto; /* Center the canvas */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to lift the canvas */
+            }
+
+            .graph-result {
+                margin-top: 20px; /* Space between the graph and the result text */
+                text-align: center; /* Center align the text */
+                font-size: 16px; /* Font size for the result text */
+                color: #f4f4f4; /* Light text color for contrast */
+            }
+
+            .graph-subtitle {
+                text-align: center;
+                font-size: 20px; /* Font size for the subtitle */
+                margin-bottom: 10px; /* Space between the subtitle and the canvas */
+                color: #f4f4f4; /* Light text color for contrast */
+            }
+        </style>
+
+        <div class="graph-subtitle">
+            <h2>Price Comparison</h2>
+        </div>
+
+        <canvas id="myChart" width="800" height="400"></canvas>
+
+        <div class="graph-result">
+            <p>* Prices are based on 1GB of RAM per month.</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx = document.getElementById('myChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['MomentMC (With Unmetered CPU)', 'Apex Hosting (With Metered CPU)', 'Bisect Hosting (With Metered CPU)'],
+                    datasets: [{
+                        label: 'Price ($)',
+                        data: [1.50, 2.62, 3.75],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(75, 192, 192, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Line',
+                        type: 'line',
+                        data: [1.50, 2.62, 3.75],
+                        borderColor: 'rgba(255, 255, 255, 1)', /* White line color for contrast */
+                        fill: false,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                color: '#f4f4f4' /* Light ticks color for contrast */
+                            },
+                            grid: {
+                                color: '#444' /* Darker grid color to contrast with black background */
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#f4f4f4' /* Light ticks color for contrast */
+                            },
+                            grid: {
+                                color: '#444' /* Darker grid color to contrast with black background */
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#f4f4f4' /* Light legend labels for contrast */
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <style>
+            .contact-section {
+                background-color: #1e1e1e; /* Darker background color */
+                color: #f4f4f4; /* Light text color for contrast */
+                padding: 20px; /* Add padding for spacing */
+                border-radius: 8px; /* Optional: Add border radius for rounded corners */
+                text-align: center; /* Center align text */
+            }
+
+            .discord-container {
+                max-width: 600px; /* Optional: Limit the container width */
+                margin: 0 auto; /* Center the container */
+            }
+
+            .discord-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #7289da; /* Discord button color */
+                color: #ffffff; /* Text color */
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            .discord-button img {
+                width: 24px; /* Adjust image size */
+                height: 24px;
+                margin-right: 10px; /* Space between image and text */
+            }
+
+            .discord-button:hover {
+                background-color: #5b6eae; /* Darker color on hover */
+            }
+        </style>
+
+        <div class="container discord-container">  <!-- Added class here -->
+            <h2>Join Our Discord Server</h2>
+            <a href="https://discord.com/invite/NVT6ktsf6g" class="discord-button" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Logo">
+                <span>Join Us on Discord</span>
+            </a>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Company Section -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="https://bill.momentmc.com/tos">Terms & Conditions</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="https://bill.momentmc.com/#intro-section">Service</a></li>
+                    <li><a href="status.html">Status</a></li>
+                </ul>
+            </div>
+
+            <!-- Hosting Section -->
+            <div class="footer-column">
+                <h3>Hosting</h3>
+                <ul>
+                    <li><a href="https://bill.momentmc.com/#intro-section">Minecraft Servers</a></li>
+                </ul>
+            </div>
+
+            <!-- Support Section -->
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="https://bill.momentmc.com/tickets">Ticket</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <img src="image/paypal-logo.png" alt="PayPal" class="payment-icon">
+                    <img src="image/stripe-logo.png" alt="Stripe" class="payment-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 MomentMC - All Rights Reserved</p>
+        </div>
+
+        <!-- Footer Styles -->
+        <style>
+            footer {
+                background-color: #222;
+                color: #fff;
+                padding: 40px 20px;
+                text-align: center;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .footer-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+                max-width: 1200px;
+                margin: 0 auto;
+                padding-bottom: 20px;
+            }
+
+            .footer-column {
+                flex: 1;
+                min-width: 220px; /* Minimum width for each column */
+                margin: 20px;
+            }
+
+            .footer-column h3 {
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+            .footer-column ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-column ul li {
+                margin-bottom: 8px;
+            }
+
+            .footer-column ul li a {
+                color: #ddd;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s ease;
+            }
+
+            .footer-column ul li a:hover {
+                color: #e67e22;
+            }
+
+            .payment-methods {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .payment-icon {
+                width: 40px;
+                height: auto;
+            }
+
+            .footer-bottom {
+                border-top: 1px solid #444;
+                padding-top: 15px;
+                font-size: 14px;
+                color: #999;
+                margin-top: 20px;
+            }
+
+            @media (max-width: 768px) {
+                .footer-container {
+                    flex-direction: column; /* Stacks columns vertically on smaller screens */
+                    align-items: center; /* Centers the content on smaller screens */
+                }
+
+                .footer-column {
+                    margin: 15px 0;
+                }
+            }
+        </style>
+    </footer>
+
+
+
+         <!--Start of Tawk.to Script-->
+            <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/666e32cc9a809f19fb3e444b/1i0f7cs6e';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            </script>
+            <!--End of Tawk.to Script-->
+    
+</body>
+</html>
