@@ -221,37 +221,26 @@
 </head>
 <body>
     <!-- Navigation -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="/image/logo.png" alt="MomentMC Logo">
-                <h1>MomentMC Company</h1>
-            </div>
-            <nav>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="service.html">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#customer-area" class="dropdown-toggle">Customer Area</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="https://bill.momentmc.com">Billing Panel</a></li>
-                                <li><a href="https://panel.momentmc.com">Server Panel</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+     <div id="nav-placeholder"></div>
+    <script>
+        // Function to load the navigation
+        function loadNav() {
+            fetch('nav.html') // Ensure this path is correct
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading nav:', error));
+        }
 
+        // Call the function to load the navigation on page load
+        loadNav();
+    </script>
 
 
     <!-- Hero Section -->
@@ -341,6 +330,159 @@
         </div>
     </section>
 
+    <!-- DDoS Protection Section -->
+    <section id="ddos-protection" class="ddos-protection-section">
+        <style>
+            .ddos-protection-section {
+                background-color: #1e1e1e; /* Dark background color */
+                color: #f4f4f4; /* Light text color for contrast */
+                padding: 40px;
+                border-radius: 8px;
+                text-align: center;
+            }
+
+            .protection-container {
+                max-width: 1000px; /* Limit container width */
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .protection-title {
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                position: relative;
+            }
+
+            .protection-title::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 2px;
+                background-color: #66c16f; /* Light green color */
+                margin: 10px auto 30px auto;
+            }
+
+            .protection-description {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .protection-feature {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin-bottom: 30px;
+            }
+
+            .protection-feature img {
+                width: 50px;
+                height: 50px;
+                margin-right: 20px;
+            }
+
+            .protection-feature-description {
+                text-align: left;
+            }
+
+            .protection-feature-title {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .protection-feature-text {
+                font-size: 16px;
+            }
+
+            /* Hover effect for the features */
+            .protection-feature:hover {
+                background-color: #2c2c2c;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            /* Button styles */
+            .learn-more-button {
+                display: inline-block;
+                background-color: #66c16f; /* Green button background */
+                color: #ffffff; /* White text */
+                padding: 12px 25px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 30px;
+                transition: background-color 0.3s ease;
+            }
+
+            .learn-more-button:hover {
+                background-color: #57a65d; /* Darker green on hover */
+            }
+        </style>
+
+        <div class="protection-container">
+            <h2 class="protection-title">DDoS Protection</h2>
+            <p class="protection-description">
+                MomentMC automatically detects and mitigates distributed denial-of-service (DDoS) attacks on your infrastructure from large-volume traffic intended to make your service unavailable to legitimate users.
+            </p>
+
+            <div class="protection-feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/3064/3064804.png" alt="Security Camera Icon">
+                <div class="protection-feature-description">
+                    <h3 class="protection-feature-title">Real-Time Network Protection</h3>
+                    <p class="protection-feature-text">
+                        Detect, analyze, and block attacks on your infrastructure in real time. Attacks are blocked inline, then redistributed across MomentMC's global fiber backbone.
+                    </p>
+                </div>
+            </div>
+
+            <div class="protection-feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/1869/1869577.png" alt="Circuit Pathways Icon">
+                <div class="protection-feature-description">
+                    <h3 class="protection-feature-title">Intelligent Threat Blocking</h3>
+                    <p class="protection-feature-text">
+                        Rules are automatically created using machine learning from traffic across the global network to intelligently reroute malicious traffic during a DDoS event.
+                    </p>
+                </div>
+            </div>
+
+            <div class="protection-feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/3197/3197312.png" alt="No Latency Icon">
+                <div class="protection-feature-description">
+                    <h3 class="protection-feature-title">No Increased Latency</h3>
+                    <p class="protection-feature-text">
+                        Keep good traffic and block the bad, with no increased latency and no routing of your traffic to a third party.
+                    </p>
+                </div>
+            </div>
+
+            <div class="protection-feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png" alt="Attack Methods Icon">
+                <div class="protection-feature-description">
+                    <h3 class="protection-feature-title">Intercept a Range of Attack Methods</h3>
+                    <p class="protection-feature-text">
+                        Protect your server applications from a range of DDoS attack methodologies including UDP, SYN, HTTP floods, and more.
+                    </p>
+                </div>
+            </div>
+
+            <div class="protection-feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/3103/3103446.png" alt="No Cost Icon">
+                <div class="protection-feature-description">
+                    <h3 class="protection-feature-title">No Cost or Maintenance for Customers</h3>
+                    <p class="protection-feature-text">
+                        Our always-on protection is fully automated and free to customers, adding another layer of protection to your infrastructure on the MomentMC network.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Learn More Button -->
+            <a href="ddos.html" class="learn-more-button">Learn More</a>
+        </div>
+    </section>
+
+    
 
    
 
@@ -531,135 +673,28 @@
 
 
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <!-- Company Section -->
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="https://bill.momentmc.com/tos">Terms & Conditions</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="https://bill.momentmc.com/#intro-section">Service</a></li>
-                    <li><a href="status.html">Status</a></li>
-                </ul>
-            </div>
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
 
-            <!-- Hosting Section -->
-            <div class="footer-column">
-                <h3>Hosting</h3>
-                <ul>
-                    <li><a href="https://bill.momentmc.com/Minecraft%20Server%20Hosting">Minecraft Servers</a></li>
-                    <li><a href="https://bill.momentmc.com/VPS">VPS</a></li>
-                </ul>
-            </div>
+    <script>
+        // Function to load the footer
+        function loadFooter() {
+            fetch('footer.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
 
-            <!-- Support Section -->
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="https://bill.momentmc.com/tickets">Ticket</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
-                </ul>
-                <!-- Payment Methods -->
-                <div class="payment-methods">
-                    <img src="image/paypal-logo.png" alt="PayPal" class="payment-icon">
-                    <img src="image/stripe-logo.png" alt="Stripe" class="payment-icon">
-                </div>
-            </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div class="footer-bottom">
-            <p>&copy; 2024 MomentMC - All Rights Reserved</p>
-        </div>
-
-        <!-- Footer Styles -->
-        <style>
-            footer {
-                background-color: #222;
-                color: #fff;
-                padding: 40px 20px;
-                text-align: center;
-                font-family: 'Arial', sans-serif;
-            }
-
-            .footer-container {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
-                max-width: 1200px;
-                margin: 0 auto;
-                padding-bottom: 20px;
-            }
-
-            .footer-column {
-                flex: 1;
-                min-width: 220px; /* Minimum width for each column */
-                margin: 20px;
-            }
-
-            .footer-column h3 {
-                margin-bottom: 15px;
-                font-size: 20px;
-                font-weight: 600;
-            }
-
-            .footer-column ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .footer-column ul li {
-                margin-bottom: 8px;
-            }
-
-            .footer-column ul li a {
-                color: #ddd;
-                text-decoration: none;
-                font-size: 14px;
-                transition: color 0.3s ease;
-            }
-
-            .footer-column ul li a:hover {
-                color: #e67e22;
-            }
-
-            .payment-methods {
-                margin-top: 15px;
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .payment-icon {
-                width: 40px;
-                height: auto;
-            }
-
-            .footer-bottom {
-                border-top: 1px solid #444;
-                padding-top: 15px;
-                font-size: 14px;
-                color: #999;
-                margin-top: 20px;
-            }
-
-            @media (max-width: 768px) {
-                .footer-container {
-                    flex-direction: column; /* Stacks columns vertically on smaller screens */
-                    align-items: center; /* Centers the content on smaller screens */
-                }
-
-                .footer-column {
-                    margin: 15px 0;
-                }
-            }
-        </style>
-    </footer>
+        // Call the function to load the footer
+        loadFooter();
+    </script>
 
 
 

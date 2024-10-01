@@ -15,77 +15,7 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background-color: #1e1e1e;
-            color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding-top: 80px; /* Add padding to avoid content hiding behind the fixed header */
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(90deg, #1e1e1e 0%, #333 100%);
-            color: #fff;
-            padding: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin: 0;
-            letter-spacing: 2px;
-            transition: color 0.3s ease;
-        }
-
-        .logo h1:hover {
-            color: #e67e22;
-        }
-
-        header nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        header nav ul li {
-            margin: 0 15px;
-            position: relative;
-        }
-
-        header nav ul li a {
-            color: #f4f4f4;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        header nav ul li a:hover {
-            color: #e67e22;
-        }
+       
 
         /* Services Section */
         .services {
@@ -148,87 +78,31 @@
         .service-card a:hover {
             background-color: #d35400;
         }
-
-        /* Footer Section */
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
-            width: 100%;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0;
-        }
-
-        footer ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        footer ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer ul li a:hover {
-            color: #e67e22;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-column {
-            text-align: center;
-        }
-
-        .footer-bottom {
-            margin-top: 20px;
-        }
     </style>
+
 </head>
 <body>
     <!-- Navigation -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="/image/logo.png" alt="MomentMC Logo">
-                <h1>MomentMC</h1>
-            </div>
-            <nav>
-                <div class="nav-menu">
-                    <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="service.html">Pricing</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                        <li class="dropdown">
-                            <a href="#customer-area" class="dropdown-toggle">Customer Area</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="https://bill.momentmc.com">Billing Panel</a></li>
-                                <li><a href="https://panel.momentmc.com">Server Panel</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+     <div id="nav-placeholder"></div>
+    <script>
+        // Function to load the navigation
+        function loadNav() {
+            fetch('nav.html') // Ensure this path is correct
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading nav:', error));
+        }
+
+        // Call the function to load the navigation on page load
+        loadNav();
+    </script>
 
     <!-- Services Content -->
     <main>
@@ -254,134 +128,27 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <!-- Company Section -->
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="https://bill.momentmc.com/tos">Terms & Conditions</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="https://bill.momentmc.com/#intro-section">Service</a></li>
-                    <li><a href="status.html">Status</a></li>
-                </ul>
-            </div>
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
 
-            <!-- Hosting Section -->
-            <div class="footer-column">
-                <h3>Hosting</h3>
-                <ul>
-                    <li><a href="https://bill.momentmc.com/Minecraft%20Server%20Hosting">Minecraft Servers</a></li>
-                    <li><a href="https://bill.momentmc.com/VPS">VPS</a></li>
-                </ul>
-            </div>
+    <script>
+        // Function to load the footer
+        function loadFooter() {
+            fetch('footer.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
 
-            <!-- Support Section -->
-            <div class="footer-column">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="https://bill.momentmc.com/tickets">Ticket</a></li>
-                    <li><a href="FAQ.html">FAQ</a></li>
-                </ul>
-                <!-- Payment Methods -->
-                <div class="payment-methods">
-                    <img src="image/paypal-logo.png" alt="PayPal" class="payment-icon">
-                    <img src="image/stripe-logo.png" alt="Stripe" class="payment-icon">
-                </div>
-            </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div class="footer-bottom">
-            <p>&copy; 2024 MomentMC - All Rights Reserved</p>
-        </div>
-
-        <!-- Footer Styles -->
-        <style>
-            footer {
-                background-color: #222;
-                color: #fff;
-                padding: 40px 20px;
-                text-align: center;
-                font-family: 'Arial', sans-serif;
-            }
-
-            .footer-container {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
-                max-width: 1200px;
-                margin: 0 auto;
-                padding-bottom: 20px;
-            }
-
-            .footer-column {
-                flex: 1;
-                min-width: 220px; /* Minimum width for each column */
-                margin: 20px;
-            }
-
-            .footer-column h3 {
-                margin-bottom: 15px;
-                font-size: 20px;
-                font-weight: 600;
-            }
-
-            .footer-column ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .footer-column ul li {
-                margin-bottom: 8px;
-            }
-
-            .footer-column ul li a {
-                color: #ddd;
-                text-decoration: none;
-                font-size: 14px;
-                transition: color 0.3s ease;
-            }
-
-            .footer-column ul li a:hover {
-                color: #e67e22;
-            }
-
-            .payment-methods {
-                margin-top: 15px;
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-            }
-
-            .payment-icon {
-                width: 40px;
-                height: auto;
-            }
-
-            .footer-bottom {
-                border-top: 1px solid #444;
-                padding-top: 15px;
-                font-size: 14px;
-                color: #999;
-                margin-top: 20px;
-            }
-
-            @media (max-width: 768px) {
-                .footer-container {
-                    flex-direction: column; /* Stacks columns vertically on smaller screens */
-                    align-items: center; /* Centers the content on smaller screens */
-                }
-
-                .footer-column {
-                    margin: 15px 0;
-                }
-            }
-        </style>
-    </footer>
+        // Call the function to load the footer
+        loadFooter();
+    </script>
 </body>
 </html>
