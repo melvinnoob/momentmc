@@ -1,0 +1,231 @@
+<body class="momentmc-nav-body">
+    <!-- Header and Navigation -->
+    <header class="momentmc-nav-header">
+        <div class="momentmc-nav-container">
+            <!-- Logo aligned to the far left, redirects to index.html -->
+            <div class="momentmc-logo-container">
+                <a href="index.html" class="momentmc-logo-link">
+                    <img src="image/logo.png" alt="MomentMC Logo" class="momentmc-logo-image">
+                    <h1 class="momentmc-logo-text">MomentMC</h1>
+                </a>
+            </div>
+
+            <!-- Navigation aligned to the far right -->
+            <nav>
+                <ul id="momentmc-navbar" class="momentmc-nav-list">
+                    <li class="momentmc-dropdown">
+                        <a href="#hosting">Hosting</a>
+                        <ul class="momentmc-dropdown-menu">
+                            <li><a href="https://bill.momentmc.com/VPS">VPS Hosting</a></li>
+                            <li><a href="https://bill.momentmc.com/Minecraft%20Server%20Hosting">Minecraft Hosting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#join-discord">Contact</a></li>
+                    <li><a href="https://bill.momentmc.com/login" class="momentmc-login-btn">Login</a></li>
+                </ul>
+                <button id="momentmc-menu-toggle" class="momentmc-menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <style>
+        /* General Styles */
+        .momentmc-nav-body, .momentmc-nav-body * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header and Navigation Styles */
+        .momentmc-nav-header {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .momentmc-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Logo Styles */
+        .momentmc-logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .momentmc-logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .momentmc-logo-image {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .momentmc-logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Navigation List Styles */
+        .momentmc-nav-list {
+            display: flex;
+            list-style-type: none;
+            gap: 15px;
+        }
+
+        .momentmc-nav-list a {
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+
+        .momentmc-nav-list a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        /* Dropdown Menu Styles */
+        .momentmc-dropdown {
+            position: relative;
+        }
+
+        .momentmc-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            list-style: none;
+            min-width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .momentmc-dropdown-menu li a {
+            display: block;
+            color: #333;
+            padding: 8px;
+            text-decoration: none;
+        }
+
+        .momentmc-dropdown-menu li a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        /* Show dropdown on hover in desktop */
+        .momentmc-dropdown:hover .momentmc-dropdown-menu {
+            display: block;
+        }
+
+        /* Login Button */
+        .momentmc-login-btn {
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+
+        .momentmc-login-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Mobile Menu Toggle */
+        .momentmc-menu-toggle {
+            display: none;
+            background: none;
+            color: #333;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .momentmc-nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                position: absolute;
+                top: 70px;
+                right: 0;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .momentmc-nav-list.show {
+                display: flex;
+            }
+
+            .momentmc-menu-toggle {
+                display: block;
+            }
+
+            .momentmc-nav-list a {
+                padding: 10px 20px;
+                border-top: 1px solid #ccc;
+            }
+
+            /* Ensure dropdown stays within mobile view */
+            .momentmc-dropdown.show .momentmc-dropdown-menu {
+                display: block;
+            }
+
+            /* Allow dropdown to toggle */
+            .momentmc-dropdown-menu {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- JavaScript for Toggle and Dropdown -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.getElementById("momentmc-menu-toggle");
+            const navbar = document.getElementById("momentmc-navbar");
+
+            // Toggle mobile menu
+            toggleButton.onclick = function() {
+                console.log("Hamburger button clicked");
+                navbar.classList.toggle("show");
+                console.log("Navbar visibility toggled:", navbar.classList.contains("show") ? "Shown" : "Hidden");
+            };
+
+            // Toggle dropdown menu for mobile view
+            document.querySelectorAll(".momentmc-dropdown > a").forEach(dropdownLink => {
+                dropdownLink.onclick = function(event) {
+                    event.preventDefault();
+                    console.log("Dropdown link clicked for:", dropdownLink.textContent.trim());
+                    const dropdownParent = this.parentNode;
+                    dropdownParent.classList.toggle("show");
+                    console.log("Dropdown visibility toggled:", dropdownParent.classList.contains("show") ? "Shown" : "Hidden");
+                };
+            });
+
+            // Log each link click in mobile navigation
+            document.querySelectorAll(".momentmc-nav-list a").forEach(navLink => {
+                navLink.onclick = function() {
+                    console.log("Navigation link clicked:", this.textContent.trim());
+                };
+            });
+        });
+    </script>
+</body>

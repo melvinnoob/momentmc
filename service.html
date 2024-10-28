@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - MomentMC.com</title>
+    <meta name="description" content="Explore the services offered by MomentMC.com, including Minecraft server hosting and VPS solutions.">
+    <link rel="icon" href="/image/logo.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Page Styling */
+        .services-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px; /* Ensure content is below the nav */
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .services-title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 20px;
+            text-align: center; /* Center the title */
+        }
+
+        .service-item {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 2em;
+            margin: 20px 0; /* Margin between service items */
+            text-align: center;
+        }
+
+        .service-item h3 {
+            font-size: 1.8em;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Button Styles */
+        .service-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .service-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="nav-placeholder"></div>
+    <script>
+        // Load navigation
+        function loadNav() {
+            fetch('nav.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('nav-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading nav:', error));
+        }
+        loadNav();
+    </script>
+
+    <!-- Services Content -->
+    <div class="services-container">
+        <h1 class="services-title">Our Services</h1>
+
+        <div class="service-item">
+            <h3>Minecraft Server Hosting</h3>
+            <p>Experience seamless gameplay with our optimized Minecraft server hosting. Enjoy high performance, low latency, and robust security features, all backed by 24/7 support to ensure your gaming experience is uninterrupted.</p>
+            <a href="https://bill.momentmc.com/Minecraft%20Server%20Hosting" class="service-button">Learn More</a>
+        </div>
+
+        <div class="service-item">
+            <h3>Virtual Private Server (VPS)</h3>
+            <p>Our VPS solutions provide you with dedicated resources, complete control, and scalability to suit your needs. Ideal for running applications, websites, or game servers, our VPS plans come with advanced management tools and expert support.</p>
+            <a href="https://bill.momentmc.com/VPS" class="service-button">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer"></div>
+    <script>
+        // Load footer
+        function loadFooter() {
+            fetch('footer.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        }
+        loadFooter();
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/666e32cc9a809f19fb3e444b/1i0f7cs6e';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>
