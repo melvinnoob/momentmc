@@ -1,0 +1,235 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header and Transparent Navbar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space logo and nav evenly */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 2rem;
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Center content by spacing text and image evenly */
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.tick {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cta-button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.cta-button.primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.cta-button.primary:hover {
+    background-color: #0056b3;
+}
+
+.cta-button.secondary {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.cta-button.secondary:hover {
+    background-color: #e0e0e0;
+    color: #0056b3;
+}
+
+/* Hero Image Styling */
+.hero-image {
+    flex: 1.5;
+    max-width: 900px; /* Increased max-width for a bigger image */
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 5rem; /* Move the image closer to the right */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 550px; /* Increase height for a larger appearance */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column; /* Stack content vertically on mobile */
+        align-items: center;
+        padding: 4rem 1rem;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center; /* Center text for mobile */
+        margin-bottom: 2rem; /* Adds space between text and image */
+    }
+
+    .hero-text h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        margin-left: 0; /* Remove left margin for centered alignment */
+        display: flex;
+        justify-content: center; /* Center image on mobile */
+    }
+
+    .hero-image img {
+        width: 90%; /* Scales the image down */
+        height: auto; /* Maintains image aspect ratio */
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Additional Button Styling */
+.cta-button.secondary, .service-button, .plan-button, .about-button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0.5rem;
+    display: inline-block;
+}
+
+.cta-button.secondary:hover, .service-button:hover, .plan-button:hover, .about-button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Button Animations */
+.cta-button, .service-button, .plan-button, .about-button {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Keyframes for Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animations on Hover */
+.hero-section h2, .services-section h2, .pricing-section h2, .about-section h2, .contact-section h2 {
+    animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero-section h2, .hero-section p {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Services Section */
+.service {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Pricing Section */
+.pricing-plan {
+    animation: fadeInUp 1.8s ease;
+}
