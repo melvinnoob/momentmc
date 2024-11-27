@@ -121,27 +121,212 @@
 
     
 
-  <!-- Hero Section with Enhanced Text and Buttons -->
-  <section id="home" class="hero-section">
+    <!-- Hero Section with Enhanced Text, Buttons, and Animated Background -->
+    <section id="home" class="hero-section-pro">
+      <style>
+        /* Hero Section Styles */
+        .hero-section-pro {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 160px 50px 100px; /* Adjusted padding */
+          background: linear-gradient(120deg, #1a1f36, #2c2f45);
+          color: #fff;
+          overflow: hidden;
+        }
+
+        .hero-section-pro .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+          z-index: 1;
+          animation: animateBackground-pro 20s linear infinite;
+        }
+
+        .hero-section-pro .hero-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 2;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .hero-section-pro .hero-text {
+          max-width: 600px;
+          animation: fadeInLeft-pro 1.5s ease-in-out;
+        }
+
+        .hero-section-pro .hero-heading {
+          font-size: 3.5rem;
+          font-weight: 800;
+          margin-bottom: 20px;
+          line-height: 1.2;
+          background: linear-gradient(90deg, #10b981, #38bdf8);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: pulseHeading-pro 3s infinite;
+        }
+
+        .hero-section-pro .sub-heading {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+          color: #d1d5db;
+        }
+
+        .hero-section-pro .features-list {
+          list-style: none;
+          padding: 0;
+          margin-bottom: 30px;
+        }
+
+        .hero-section-pro .features-list li {
+          font-size: 1rem;
+          margin-bottom: 10px;
+        }
+
+        .hero-section-pro .tick {
+          color: #10b981;
+          font-weight: bold;
+        }
+
+        .hero-section-pro .hero-buttons {
+          display: flex;
+          gap: 15px;
+        }
+
+        .hero-section-pro .cta-button {
+          text-decoration: none;
+          display: inline-flex; /* Use inline-flex to enable vertical alignment */
+          justify-content: center;
+          align-items: center; /* Ensures text is centered vertically */
+          padding: 12px 30px; /* Adjusted padding for a balanced button size */
+          border-radius: 25px;
+          font-size: 1rem;
+          font-weight: 600;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .hero-section-pro .cta-button.primary {
+          background-color: #10b981;
+          color: #fff;
+        }
+
+        .hero-section-pro .cta-button.primary:hover {
+          background-color: #059669;
+        }
+
+        .hero-section-pro .cta-button.secondary {
+          background-color: transparent;
+          border: 2px solid #10b981;
+          color: #10b981;
+        }
+
+        .hero-section-pro .cta-button.secondary:hover {
+          background-color: #10b981;
+          color: #fff;
+        }
+
+        .hero-section-pro .hero-image img {
+          width: 100%;
+          max-width: 500px;
+          animation: fadeInRight-pro 1.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft-pro {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeInRight-pro {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes animateBackground-pro {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes pulseHeading-pro {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.8;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-section-pro .hero-content {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .hero-section-pro .hero-text {
+            margin-bottom: 20px;
+          }
+
+          .hero-section-pro .hero-image img {
+            max-width: 80%;
+          }
+        }
+      </style>
+
+      <div class="hero-overlay"></div>
       <div class="hero-content">
-          <div class="hero-text">
-              <h2>Your Premier Hosting Solution</h2>
-              <p class="sub-heading">Enjoy unmatched reliability and top-tier server performance.</p>
-              <p> 
-                  <span class="feature"><span class="tick">✔️</span> Premium Hardware</span><br>
-                  <span class="feature"><span class="tick">✔️</span> Affordable Pricing</span><br>
-                  <span class="feature"><span class="tick">✔️</span> Instant Setup</span>
-              </p>
-              <div class="hero-buttons">
-                  <a href="#pricing" class="cta-button primary">Start Now</a>
-                  <a href="#services" class="cta-button secondary">Learn More</a>
-              </div>
+        <div class="hero-text">
+          <h2 class="hero-heading">Your Premier Hosting Solution</h2>
+          <p class="sub-heading">Enjoy unmatched reliability and top-tier server performance.</p>
+          <ul class="features-list">
+            <li><span class="tick">✔️</span> Premium Hardware</li>
+            <li><span class="tick">✔️</span> Affordable Pricing</li>
+            <li><span class="tick">✔️</span> Instant Setup</li>
+          </ul>
+          <div class="hero-buttons">
+            <a href="#pricing" class="cta-button primary">Start Now</a>
+            <a href="#services" class="cta-button secondary">Learn More</a>
           </div>
-          <div class="hero-image">
-              <img src="image/ezgif-3-7c05db8839.png" alt="Hosting Illustration">
-          </div>
+        </div>
+        <div class="hero-image">
+          <img src="image/frontpagelogo2.png" alt="Hosting Illustration">
+        </div>
       </div>
-  </section>
+    </section>
+
+
 
 
 
