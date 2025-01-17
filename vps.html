@@ -424,238 +424,408 @@
 
     <!-- Pricing Section -->
     <section id="pricing">
-    <div class="section pricing-section">
-        <h2>Flexible VPS Hosting Plans</h2>
-        <div class="pricing">
-            <!-- Graph Header -->
-            <div class="plan-header">
-                <span class="header-item">Plan</span>
-                <span class="header-item">CPU</span>
-                <span class="header-item">RAM</span>
-                <span class="header-item">NVMe</span>
-                <span class="header-item">Price</span>
+        <div class="section pricing-section">
+            <h2>Flexible VPS Hosting Plans</h2>
+
+            <!-- Budget and Premium Toggle Buttons -->
+            <div class="toggle-buttons">
+                <button class="toggle-button" onclick="showPlans('budget')">Budget</button>
+                <button class="toggle-button" onclick="showPlans('premium')">Premium</button>
             </div>
 
-            <!-- Pricing Plans -->
-            <div class="plan">
-                <span class="plan-title">Share VPS XS</span>
-                <span class="plan-spec">1 Core</span>
-                <span class="plan-spec">1GB</span>
-                <span class="plan-spec">25GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$14</span> $7/month
-                    </span>
+            <div class="pricing">
+                <!-- Graph Header -->
+                <div class="plan-header">
+                    <span class="header-item">Plan</span>
+                    <span class="header-item">CPU</span>
+                    <span class="header-item">RAM</span>
+                    <span class="header-item">NVMe</span>
+                    <span class="header-item">Price</span>
                 </div>
-                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/27';">Order</button>
 
-            </div>
-
-            <div class="plan popular-plan">
-                <div class="popular-banner">Most Popular</div>
-                <span class="plan-title">Share VPS S</span>
-                <span class="plan-spec">1 Core</span>
-                <span class="plan-spec">2GB</span>
-                <span class="plan-spec">50GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$28</span> $14/month
-                    </span>
+                <!-- Budget Plans -->
+                <div class="plan" data-plan-type="budget">
+                    <span class="plan-title">Shared CPU VPS XS</span>
+                    <span class="plan-spec">1 Core</span>
+                    <span class="plan-spec">1GB</span>
+                    <span class="plan-spec">25GB</span>
+                    <div class="price-container">
+                        <span class="plan-price">$4/month</span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/47';">Order</button>
                 </div>
-            <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/29';">Order</button>
-            </div>
-
-            <div class="plan">
-                <span class="plan-title">Share VPS M</span>
-                <span class="plan-spec">2 Cores</span>
-                <span class="plan-spec">4GB</span>
-                <span class="plan-spec">80GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$52</span> $26/month
-                    </span>
+                <div class="plan" data-plan-type="budget">
+                    <span class="plan-title">Shared CPU VPS S</span>
+                    <span class="plan-spec">1 Core</span>
+                    <span class="plan-spec">2GB</span>
+                    <span class="plan-spec">50GB</span>
+                    <div class="price-container">
+                        <span class="plan-price">$6/month</span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/52';">Order</button>
                 </div>
-            <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/30';">Order</button> 
-            </div>
-
-            <div class="plan">
-                <span class="plan-title">Share VPS L</span>
-                <span class="plan-spec">4 Cores</span>
-                <span class="plan-spec">8GB</span>
-                <span class="plan-spec">160GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$100</span> $50/month
-                    </span>
                 </div>
-                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/34';">Order</button>
-            </div>
-
-            <div class="plan">
-                <span class="plan-title">Share VPS XL</span>
-                <span class="plan-spec">8 Cores</span>
-                <span class="plan-spec">16GB</span>
-                <span class="plan-spec">320GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$196</span> $98/month
-                    </span>
+                <div class="plan" data-plan-type="budget">
+                    <span class="plan-title">Shared CPU VPS M</span>
+                    <span class="plan-spec">2 Core</span>
+                    <span class="plan-spec">4GB</span>
+                    <span class="plan-spec">80GB</span>
+                    <div class="price-container">
+                        <span class="plan-price">$8/month</span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/53';">Order</button>
                 </div>
-                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/35';">Order</button>
-            </div>
 
-            <div class="plan">
-                <span class="plan-title">Share VPS XXL</span>
-                <span class="plan-spec">16 Cores</span>
-                <span class="plan-spec">32GB</span>
-                <span class="plan-spec">640GB</span>
-                <div class="price-container">
-                    <div class="discount-banner">50% OFF</div>
-                    <span class="plan-price">
-                        <span class="original-price">$388</span> $194/month
-                    </span>
+
+               
+
+                <!-- Premium Plans -->
+                <div class="plan" data-plan-type="premium">
+        <span class="plan-title">Premium VPS XS</span>
+                    <span class="plan-spec">1 Core</span>
+                    <span class="plan-spec">1GB</span>
+                    <span class="plan-spec">25GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$14</span> $7/month
+                        </span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/27';">Order</button>
+
                 </div>
-                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/36';">Order</button>
+
+                <div class="plan" data-plan-type="premium">
+                    <div class="popular-banner">Most Popular</div>
+                    <span class="plan-title">Premium VPS S</span>
+                    <span class="plan-spec">1 Core</span>
+                    <span class="plan-spec">2GB</span>
+                    <span class="plan-spec">50GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$28</span> $14/month
+                        </span>
+                    </div>
+                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/29';">Order</button>
+                </div>
+
+                <div class="plan" data-plan-type="premium">
+                    <span class="plan-title">Premium VPS M</span>
+                    <span class="plan-spec">2 Cores</span>
+                    <span class="plan-spec">4GB</span>
+                    <span class="plan-spec">80GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$52</span> $26/month
+                        </span>
+                    </div>
+                <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/30';">Order</button> 
+                </div>
+
+                <div class="plan" data-plan-type="premium">
+                    <span class="plan-title">Premium VPS L</span>
+                    <span class="plan-spec">4 Cores</span>
+                    <span class="plan-spec">8GB</span>
+                    <span class="plan-spec">160GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$100</span> $50/month
+                        </span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/34';">Order</button>
+                </div>
+
+                <div class="plan" data-plan-type="premium">
+                    <span class="plan-title">Premium VPS XL</span>
+                    <span class="plan-spec">8 Cores</span>
+                    <span class="plan-spec">16GB</span>
+                    <span class="plan-spec">320GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$196</span> $98/month
+                        </span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/35';">Order</button>
+                </div>
+
+                <div class="plan" data-plan-type="premium">
+                    <span class="plan-title">Premium VPS XXL</span>
+                    <span class="plan-spec">16 Cores</span>
+                    <span class="plan-spec">32GB</span>
+                    <span class="plan-spec">640GB</span>
+                    <div class="price-container">
+                        <div class="discount-banner">50% OFF</div>
+                        <span class="plan-price">
+                            <span class="original-price">$388</span> $194/month
+                        </span>
+                    </div>
+                    <button class="order-button" onclick="window.location.href='https://bill.momentmc.com/checkout/config/36';">Order</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <style>
-        .pricing-section {
-            padding: 20px 0;
-            margin-top: -60px;
-        }
+        <style>
+            .pricing-section {
+                padding: 20px 0;
+                margin-top: -60px;
+            }
 
-        .pricing {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 95%;
-            margin: 0 auto;
-        }
+            .pricing {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 95%;
+                margin: 0 auto;
+            }
 
-        .plan-header {
-            display: flex;
-            justify-content: space-between;
-            background-color: #f7f7f7;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            color: #555;
-        }
+            .plan-header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #f7f7f7;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: bold;
+                color: #555;
+            }
 
-        .header-item {
-            flex: 1;
-            text-align: center;
-        }
+            .header-item {
+                flex: 1;
+                text-align: center;
+            }
 
-        .plan {
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            padding: 10px 20px;
-            height: 100px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+            .plan {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                padding: 10px 20px;
+                height: 100px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
-        .plan:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+            .plan:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
 
-        .plan-title {
-            flex: 2;
-            text-align: left;
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #333;
-        }
+            .plan-title {
+                flex: 2;
+                text-align: left;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #333;
+            }
 
-        .plan-spec {
-            flex: 1;
-            text-align: center;
-            font-size: 1rem;
-            color: #555;
-        }
+            .plan-spec {
+                flex: 1;
+                text-align: center;
+                font-size: 1rem;
+                color: #555;
+            }
 
-        .price-container {
-            flex: 1;
-            text-align: center;
-            position: relative;
-        }
+            .price-container {
+                flex: 1;
+                text-align: center;
+                position: relative;
+            }
 
-        .discount-banner {
-            position: absolute;
-            top: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: yellow;
-            color: #000;
-            padding: 5px 10px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            border-radius: 4px;
-        }
+            .discount-banner {
+                position: absolute;
+                top: -45px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: yellow;
+                color: #000;
+                padding: 5px 10px;
+                font-weight: bold;
+                font-size: 0.9rem;
+                border-radius: 4px;
+            }
 
-        .plan-price {
-            font-size: 1rem;
-            color: #007bff;
-            margin-top: 10px;
-        }
+            .plan-price {
+                font-size: 1rem;
+                color: #007bff;
+                margin-top: 10px;
+            }
 
-        .original-price {
-            text-decoration: line-through;
-            color: #999;
-            margin-right: 8px;
-        }
+            .original-price {
+                text-decoration: line-through;
+                color: #999;
+                margin-right: 8px;
+            }
 
-        .order-button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 1rem;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
+            .order-button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 1rem;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+            }
 
-        .order-button:hover {
-            background-color: #0056b3;
-        }
+            .order-button:hover {
+                background-color: #0056b3;
+            }
 
-        .popular-plan {
-            background: #f0f8ff;
-            border: 2px solid #007bff;
-            box-shadow: 0 4px 10px rgba(0, 0, 255, 0.2);
-            position: relative;
-        }
+            .popular-plan {
+                background: #f0f8ff;
+                border: 2px solid #007bff;
+                box-shadow: 0 4px 10px rgba(0, 0, 255, 0.2);
+                position: relative;
+            }
 
-        .popular-banner {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: #007bff;
-            color: #fff;
-            padding: 5px 10px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 4px;
-            transform: rotate(10deg);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-        </section>
+            .popular-banner {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                background: #007bff;
+                color: #fff;
+                padding: 5px 10px;
+                font-size: 0.9rem;
+                font-weight: bold;
+                border-radius: 4px;
+                transform: rotate(10deg);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+            .pricing-section {
+                padding: 20px 0;
+            }
+
+            .toggle-buttons {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .toggle-button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 1rem;
+                margin: 0 10px;
+                transition: background-color 0.3s ease;
+            }
+
+            .toggle-button:hover {
+                background-color: #0056b3;
+            }
+
+            .pricing {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 95%;
+                margin: 0 auto;
+            }
+
+            .plan-header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #f7f7f7;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-weight: bold;
+                color: #555;
+            }
+
+            .header-item {
+                flex: 1;
+                text-align: center;
+            }
+
+            .plan {
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+                height: 100px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .plan:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .plan[data-plan-type="premium"] {
+                display: none; /* Premium plans hidden by default */
+            }
+
+            .plan-title {
+                flex: 2;
+                text-align: left;
+                font-weight: bold;
+                font-size: 1.2rem;
+                color: #333;
+            }
+
+            .plan-spec {
+                flex: 1;
+                text-align: center;
+                font-size: 1rem;
+                color: #555;
+            }
+
+            .price-container {
+                flex: 1;
+                text-align: center;
+            }
+
+            .plan-price {
+                font-size: 1.2rem;
+                color: #007bff;
+            }
+
+            .order-button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 1rem;
+                text-transform: uppercase;
+                transition: background-color 0.3s ease;
+            }
+
+            .order-button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+
+        <script>
+            function showPlans(type) {
+                const plans = document.querySelectorAll('.plan');
+                plans.forEach(plan => {
+                    if (plan.getAttribute('data-plan-type') === type) {
+                        plan.style.display = 'flex';
+                    } else {
+                        plan.style.display = 'none';
+                    }
+                });
+            }
+
+            // Initialize with Budget Plans visible
+            showPlans('budget');
+        </script>
+    </section>
+
 
     <!-- OS Section -->
     <div class="section">
