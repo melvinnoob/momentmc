@@ -44,7 +44,7 @@
             width: 100%;
             background: linear-gradient(135deg, var(--primary-color), #1e3a8a);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 20px;
             box-shadow: var(--shadow);
             display: flex;
             align-items: center;
@@ -54,7 +54,7 @@
         .navbar-content {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
         }
 
         .navbar a {
@@ -62,7 +62,7 @@
             color: white;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .navbar a:hover {
@@ -70,57 +70,60 @@
         }
 
         .logo {
-            height: 40px;
+            height: 30px;
             width: auto;
         }
 
         .brand-name {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
         }
 
         .main-content {
             width: 100%;
             max-width: var(--content-width);
-            padding: 0 20px;
+            padding: 0 15px;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         .container {
             width: 100%;
-            margin: 30px auto;
-            padding: 40px;
+            margin: 20px auto;
+            padding: 20px;
             background: var(--card-background);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         .endpoint {
             text-align: left;
-            padding: 40px;
+            padding: 20px;
             background: var(--card-background);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             transition: var(--transition);
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.6;
             color: var(--text-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .btn-group {
@@ -128,12 +131,12 @@
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 2rem 0;
+            margin: 1.5rem 0;
         }
 
         .btn {
             display: inline-flex;
-            padding: 14px 24px;
+            padding: 12px 20px;
             font-size: 1rem;
             font-weight: 500;
             color: white;
@@ -145,6 +148,8 @@
             box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
             align-items: center;
             justify-content: center;
+            width: 100%; /* Full width on mobile */
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         .btn:hover {
@@ -156,20 +161,21 @@
             width: 100%;
             background: #1e1e2e;
             color: #cbd5e1;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             font-family: monospace;
             text-align: left;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
+            overflow-x: auto; /* Allow horizontal scrolling for long code */
+            white-space: pre-wrap; /* Wrap long lines */
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         .scroll-top {
             display: inline-flex;
-            margin: 30px auto;
-            padding: 16px 24px;
+            margin: 20px auto;
+            padding: 12px 20px;
             font-size: 1rem;
             font-weight: 600;
             background: #ef4444;
@@ -179,13 +185,14 @@
             transition: var(--transition);
             align-items: center;
             gap: 8px;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         .theme-toggle {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            padding: 12px 18px;
+            padding: 10px 15px;
             background: var(--primary-color);
             color: white;
             border: none;
@@ -195,32 +202,71 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         @media (max-width: 768px) {
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .brand-name {
+                font-size: 1.2rem;
+            }
+
+            .logo {
+                height: 25px;
+            }
+
             .main-content {
-                padding: 0 15px;
+                padding: 0 10px;
             }
-            
+
             .container {
-                padding: 25px;
-                margin: 20px auto;
+                padding: 15px;
+                margin: 15px auto;
             }
-            
+
             .endpoint {
-                padding: 25px;
+                padding: 15px;
             }
-            
+
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-            
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
+
             .btn {
-                width: 100%;
+                padding: 10px 15px;
+                font-size: 0.95rem;
             }
-            
-            .btn-group {
-                flex-direction: column;
+
+            .code-block {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .scroll-top {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+
+            .theme-toggle {
+                padding: 8px 12px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                width: auto; /* Auto width on desktop */
             }
         }
 
