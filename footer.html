@@ -1,4 +1,4 @@
-<!-- Footer -->
+<!-- Modern Footer -->
 <footer class="momentmc-footer">
     <div class="momentmc-footer-container">
         <!-- Company Section -->
@@ -10,7 +10,6 @@
                 <li><a href="https://bill.momentmc.com/tos">Terms & Conditions</a></li>
                 <li><a href="index.html#join-discord">Contact</a></li>
                 <li><a href="service.html">Service</a></li>
-                
             </ul>
         </div>
 
@@ -20,7 +19,6 @@
             <ul>
                 <li><a href="https://bill.momentmc.com/Minecraft%20Server%20Hosting">Minecraft Servers</a></li>
                 <li><a href="https://bill.momentmc.com/VPS">VPS</a></li>
-               
             </ul>
         </div>
 
@@ -29,13 +27,21 @@
             <h3>Support</h3>
             <ul>
                 <li><a href="https://bill.momentmc.com/tickets">Ticket</a></li>
-                <li><a href="FAQ.html"></a></li>
+                <li><a href="FAQ.html">FAQ</a></li>
             </ul>
-            <!-- Payment Methods -->
-            <div class="momentmc-payment-methods">
-                <img src="image/paypal-logo.png" alt="PayPal" class="momentmc-payment-icon">
-                <img src="image/stripe-logo.png" alt="Stripe" class="momentmc-payment-icon">
-            </div>
+        </div>
+    </div>
+
+    <!-- Payment & Social Section -->
+    <div class="momentmc-footer-extras">
+        <div class="momentmc-payment-methods">
+            <img src="image/paypal-logo.png" alt="PayPal" class="momentmc-payment-icon">
+            <img src="image/stripe-logo.png" alt="Stripe" class="momentmc-payment-icon">
+        </div>
+        <div class="momentmc-social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
 
@@ -44,103 +50,89 @@
         <p>&copy; 2024 - <script>document.write(new Date().getFullYear());</script> MomentMC - All Rights Reserved</p>
     </div>
 
-
     <!-- Footer Styles -->
     <style>
-        /* Full-width footer styling */
         .momentmc-footer {
-            background-color: #222;
-            color: #fff;
-            padding: 40px 20px;
+            background-color: #1e1e1e;
+            color: #f1f1f1;
+            padding: 50px 20px;
             text-align: center;
-            font-family: 'Arial', sans-serif;
-            width: 100vw; /* Ensures full width */
-            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Container for footer content, centered and responsive */
         .momentmc-footer-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 50px;
             flex-wrap: wrap;
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding-bottom: 20px;
         }
 
         .momentmc-footer-column {
             flex: 1;
-            min-width: 220px;
-            margin: 20px;
+            min-width: 200px;
         }
 
         .momentmc-footer-column h3 {
             margin-bottom: 15px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
+            color: #e67e22;
         }
 
         .momentmc-footer-column ul {
             list-style: none;
             padding: 0;
-            margin: 0;
-        }
-
-        .momentmc-footer-column ul li {
-            margin-bottom: 8px;
         }
 
         .momentmc-footer-column ul li a {
-            color: #ddd;
+            color: #ccc;
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .momentmc-footer-column ul li a:hover {
             color: #e67e22;
         }
 
-        .momentmc-payment-methods {
-            margin-top: 15px;
+        .momentmc-footer-extras {
             display: flex;
             justify-content: center;
-            gap: 15px;
-        }
-
-        .momentmc-payment-icon {
-            width: 40px;
-            height: auto;
-        }
-
-        /* Footer bottom section styling */
-        .momentmc-footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 15px;
-            font-size: 14px;
-            color: #999;
+            align-items: center;
+            gap: 30px;
             margin-top: 20px;
         }
 
-        .momentmc-footer-bottom a {
-            color: #ddd;
-            text-decoration: none;
+        .momentmc-payment-methods img {
+            width: 50px;
+            margin: 0 10px;
         }
 
-        .momentmc-footer-bottom a:hover {
+        .momentmc-social-icons a {
+            color: #fff;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .momentmc-social-icons a:hover {
             color: #e67e22;
         }
 
-        /* Responsive footer layout for smaller screens */
+        .momentmc-footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+            border-top: 1px solid #444;
+            padding-top: 15px;
+        }
+
         @media (max-width: 768px) {
             .momentmc-footer-container {
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .momentmc-footer-column {
-                margin: 15px 0;
+                text-align: center;
             }
         }
     </style>

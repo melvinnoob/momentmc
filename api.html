@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MomentMC API Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4f46e5;
+            --primary-hover-color: #4338ca;
+            --background-color: #f4f7fc;
+            --text-color: #2d3748;
+            --card-background: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+            --content-width: 1200px;
+        }
+
+        [data-theme="dark"] {
+            --background-color: #1a1a1a;
+            --text-color: #e2e8f0;
+            --card-background: #2d2d2d;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .navbar {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), #1e3a8a);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: var(--content-width);
+            padding: 0 20px;
+        }
+
+        .container {
+            width: 100%;
+            margin: 30px auto;
+            padding: 40px;
+            background: var(--card-background);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .endpoint {
+            text-align: left;
+            padding: 40px;
+            background: var(--card-background);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover-color);
+            transform: translateY(-3px);
+        }
+
+        .code-block {
+            width: 100%;
+            background: #1e1e2e;
+            color: #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .scroll-top {
+            display: inline-flex;
+            margin: 30px auto;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: #ef4444;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: var(--transition);
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 18px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 0 15px;
+            }
+            
+            .container {
+                padding: 25px;
+                margin: 20px auto;
+            }
+            
+            .endpoint {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 1600px) {
+            :root {
+                --content-width: 1400px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+        <div class="navbar">MomentMC API Documentation</div>
+
+        <div class="main-content">
+            <div class="container">
+                <h1>Welcome to MomentMC API</h1>
+                <p>Explore our powerful API designed for seamless integration with Minecraft server management, VPS provisioning, and web hosting automation.</p>
+
+                <h2>What Can You Do with MomentMC API?</h2>
+                <ul>
+                    <li><strong>Reselling Services:</strong> Integrate our API into your platform to resell Minecraft servers, VPS instances, and web hosting plans effortlessly.</li>
+                    <li><strong>Building Custom Control Panels:</strong> Use our API to develop personalized dashboards for managing game servers, VPS resources, and websites.</li>
+                    <li><strong>Automated Deployments:</strong> Enable instant provisioning, configuration, and scaling of your services through API requests.</li>
+                    <li><strong>Billing & User Management:</strong> Connect the API with your billing system to automate subscriptions, invoicing, and customer management.</li>
+                </ul>
+
+                <div class="btn-group">
+                    <a href="minecraftapi.html" class="btn">Minecraft API</a>
+                    <a href="vpsapi.html" class="btn">VPS API</a>
+                    <a href="webhostingapi.html" class="btn">Web Hosting API</a>
+                </div>
+            </div>
+
+        <div class="container endpoint">
+            <h2>1. Pay Invoice by Credit</h2>
+            <p><strong>Endpoint:</strong> <code>POST /api/client/v1/invoices/{invoice_id}/pay</code></p>
+            <pre class="code-block">{
+    "payment_method": "credits"
+}</pre>
+            <pre class="code-block">curl --request POST \  
+  --url https://api.momentmc.com/api/client/v1/invoices/724/pay \  
+  --header 'Authorization: Bearer YOUR_API_KEY' \  
+  --header 'Content-Type: application/json' \  
+  --data '{"payment_method": "credits"}'</pre>
+        </div>
+
+        <div class="container endpoint">
+            <h2>2. Browse Products</h2>
+            <p><strong>Endpoint:</strong> <code>GET /api/website/v1/products</code></p>
+            <pre class="code-block">curl -X GET "https://api.momentmc.com/api/website/v1/products" \  
+  -H "Accept: application/json" \  
+  -H "Authorization: Bearer YOUR_API_KEY"</pre>
+        </div>
+
+        <div class="container endpoint">
+            <h2>3. Browse Categories</h2>
+            <p><strong>Endpoint:</strong> <code>GET /api/website/v1/categories</code></p>
+            <pre class="code-block">curl -X GET "https://api.momentmc.com/api/website/v1/categories" \  
+  -H "Accept: application/json" \  
+  -H "Authorization: Bearer YOUR_API_KEY"</pre>
+        </div>
+    </div>
+
+    <a href="#" class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Explore More APIs</a>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.setAttribute('data-theme', body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        }
+    </script>
+    <footer class="momentmc-footer">
+        <div class="momentmc-footer-bottom">
+            <p>&copy; 2024 - <script>document.write(new Date().getFullYear());</script> MomentMC - All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>
